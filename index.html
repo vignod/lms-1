@@ -1,101 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 300px;
-            padding: 20px;
-            margin: 50px auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .input-field {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        .input-field[type="file"] {
-            padding: 5px;
-        }
-        .submit-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .submit-btn:hover {
-            background-color: #45a049;
-        }
-        .profile-img-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ddd;
-        }
-    </style>
-</head>
-<body>
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <div class="main-box">
 
-<div class="container">
-    <div class="header">
-        <h2>Login</h2>
-    </div>
-    
-    <form action="#" method="post">
-        <!-- Profile Picture -->
-        <div class="profile-img-container">
-            <img src="default-profile.png" id="profileImg" class="profile-img" alt="Profile Picture">
-            <input type="file" class="input-field" id="profilePic" accept="image/*" onchange="previewProfilePic()">
+            <img src="user.png" class="avatar" alt="avatar">
+
+            <h1>Login Here</h1>
+
+            <form>
+
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="Enter Username">
+
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Enter Password">
+
+                <input type="submit" value="Login">
+
+                <a href="#">Lost your password?</a> <br>
+                <a href="#">Don't have an account?</a>
+
+            </form>
+
         </div>
 
-        <!-- First Text Question -->
-        <input type="text" class="input-field" name="question1" placeholder="Enter your first question answer" required>
-        
-        <!-- Second Text Question -->
-        <input type="text" class="input-field" name="question2" placeholder="Enter your second question answer" required>
-        
-        <!-- Submit Button -->
-        <button type="submit" class="submit-btn">Login</button>
-    </form>
-</div>
-
-<script>
-    // Function to preview the profile picture
-    function previewProfilePic() {
-        const file = document.getElementById('profilePic').files[0];
-        const reader = new FileReader();
-        reader.onloadend = function() {
-            document.getElementById('profileImg').src = reader.result;
-        };
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
-</script>
-
-</body>
+    </body>
 </html>
